@@ -16,6 +16,8 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
+
+    //all entries in db
     @GetMapping("/all-users")
     public ResponseEntity<?> getAllUsers()
     {
@@ -27,6 +29,8 @@ public class AdminController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+
+//Add first admin role by yourself in db because /admin is authenticated
     @PostMapping("/create-admin-user")
     public void createUser(@RequestBody User user)
     {
